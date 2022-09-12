@@ -2,21 +2,19 @@ import React from "react";
 import { SafeAreaView, ScrollView, View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { color_primario, color_secundario } from "../utils/paleta";
 
-export const ScreenHome = () =>{
+export const ScreenHome = ({navigation}) =>{
     return(
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.container}>
-            <View>
-            <Image style={styles.iconUmd} source={require('../imagenes/iconumd2.png')}/>
-            <Text style={styles.textStyle}>Ingreso de licencia</Text>
-            <Image style={styles.iconStyle} source={require('../imagenes/iconagii2.png')}/>
-            </View>
-            <TextInput style={styles.licenseInput}/>
-            
-            <TouchableOpacity style={styles.btnComenzar}>
-                <Text style={{fontSize:20,fontWeight:'bold',color:'white'}}>Ingresar</Text>
-
-            </TouchableOpacity>             
+            <ScrollView>
+                <View styles={styles.head}>
+                    <Image style={styles.iconUmd} source={require('../imagenes/iconumd2.png')}/>
+                    <Text style={styles.textStyle}>AGUANTA KIMIIII</Text>
+                    <Image style={styles.iconStyle} source={require('../imagenes/iconagii2.png')}/>
+                </View>
+                <TextInput style={styles.licenseInput}/>                
+                <TouchableOpacity style={styles.btnComenzar}>
+                    <Text style={{fontSize:20,fontWeight:'bold',color:'white'}} onPress={()=> navigation.navigate('Models')}>Ingresar</Text>
+                </TouchableOpacity>             
             </ScrollView>
         </SafeAreaView>
 
@@ -35,7 +33,7 @@ const styles = StyleSheet.create({
         height: 50,
         marginTop: 10,
         alignSelf:'flex-start',
-        justifyContent:'center'
+        
     },
     textStyle:{
         paddingTop: 30,
@@ -62,7 +60,10 @@ const styles = StyleSheet.create({
         backgroundColor: color_secundario,
         padding:20,
         borderRadius:30
-    }
+    },
+    head:{
+        padding:15,
+    },
 
 
 })
