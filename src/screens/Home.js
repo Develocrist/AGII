@@ -1,5 +1,6 @@
 import React from "react";
 import { SafeAreaView, ScrollView, View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { withSafeAreaInsets } from "react-native-safe-area-context";
 import { color_primario, color_secundario } from "../utils/paleta";
 
 export const ScreenHome = ({navigation}) =>{
@@ -8,7 +9,7 @@ export const ScreenHome = ({navigation}) =>{
             <ScrollView>
                 <View styles={styles.head}>
                     <Image style={styles.iconUmd} source={require('../imagenes/iconumd2.png')}/>
-                    <Text style={styles.textStyle}>AGUANTA KIMIIII</Text>
+                    <Text style={styles.textStyle}>Ingreso Licencia</Text>
                     <Image style={styles.iconStyle} source={require('../imagenes/iconagii2.png')}/>
                 </View>
                 <TextInput style={styles.licenseInput}/>                
@@ -52,7 +53,8 @@ const styles = StyleSheet.create({
         marginTop:20,
         borderWidth: 1,
         height: 40,
-        width: 200
+        width: 200,
+        backgroundColor: 'white'
     },
     btnComenzar:{
         alignSelf:'center',
